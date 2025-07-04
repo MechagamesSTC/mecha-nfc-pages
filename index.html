@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="box-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mecha Games NFC Box Index</title>
+</head>
+<body>
+
+  <header>
+    <img src="mecha-logo.jpg" alt="Mecha Games Logo" class="logo">
+    <h1>Welcome to Mecha Games NFC Box Index</h1>
+  </header>
+
+  <div class="search-bar" style="text-align:center; margin-bottom: 2rem;">
+    <input type="text" id="setSearch" placeholder="Search set name..." style="padding: 0.6rem; width: 260px; font-size: 1rem; border-radius: 5px; border: 1px solid #fcd34d; background-color: #1e1e1e; color: #fff;">
+    <button onclick="searchSet()" style="padding: 0.6rem 1.2rem; font-size: 1rem; margin-left: 0.5rem; border-radius: 5px; border: none; background-color: #e3342f; color: #fff; cursor: pointer;">Search</button>
+  </div>
+
+  <ul id="boxListContainer"></ul>
+
+  <script>
+    const boxList = ["03", "04", "45"]; // 🔁 Add more box numbers here
+
+    const boxSetMap = {
+      "Box 03": [
+        "Commander Masters", "Core Set 2020", "Throne of Eldraine", "War of the Spark"
+      ],
+      "Box 04": [],
+      "Box 45": [
+        "Mirrodin", "Zendikar", "Rise of the Eldrazi", "Scars of Mirrodin", "Mirrodin Besieged",
+        "New Phyrexia", "Innistrad", "Dark Ascension", "Avacyn Restored", "Magic 2011", "Journey into Nyx"
+      ]
+    };
+
+    // Build box cards dynamically
+    const container = document.getElementById("boxListContainer");
+    boxList.forEach(boxNum => {
+      const li = document.createElement("li");
+      li.className = "set-card";
+      const link = document.createElement("a");
+      link.href = `box_${boxNum}.html`;
+      link.textContent = `Box ${boxNum}`;
+      li.appendChild(link);
+      container.appendChild(li);
+    });
+
+    function searchSet() {
+      const input = document.getElementById("setSearch").value.toLowerCase();
+      for (const box in boxSetMap) {
+        const found = boxSetMap[box].some(set =>
+          set.toLowerCase().includes(input)
+        );
+        if (found) {
+          const boxNumber = box.replace("Box ", "").padStart(2, '0');
+          window.location.href = `box_${boxNumber}.html`;
+          return;
+        }
+      }
+      alert("Set not found in any box.");
+    }
+  </script>
+
+</body>
+</html>
