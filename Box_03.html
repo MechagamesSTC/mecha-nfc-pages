@@ -36,4 +36,18 @@
     <li><img src="https://svgs.scryfall.io/sets/war.svg" alt="WAR"> War of the Spark (WAR)</li>
   </ul>
 </body>
+  <script> // Sorting 
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('ul');
+    const items = Array.from(list.querySelectorAll('li'));
+
+    items.sort((a, b) => {
+      const textA = a.textContent.toUpperCase();
+      const textB = b.textContent.toUpperCase();
+      return textA.localeCompare(textB);
+    });
+
+    items.forEach(item => list.appendChild(item));
+  });
+</script>
 </html>
