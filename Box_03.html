@@ -9,7 +9,7 @@
   </style>
 </head>
 <body>
-<button onclick="history.back()" style="
+<button onclick="if (document.referrer) { history.back(); } else { window.location.href='index.html'; }" style="
   display: flex;
   align-items: center;
   background-color: #222;
