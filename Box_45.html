@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    img { height: 20px; vertical-align: middle; margin-right: 0.5rem; }
+    li { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+<button onclick="if (document.referrer) { history.back(); } else { window.location.href='index.html'; }" style="
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 20px; margin-right: 8px;">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+  </svg>
+  Back
+</button>
+
+
+  <h1>Box 45</h1>
+  <ul>
+    <li><img src="https://svgs.scryfall.io/sets/mrd.svg" alt="MRD"> Mirrodin (MRD)</li>
+    <li><img src="https://svgs.scryfall.io/sets/zen.svg" alt="ZEN"> Zendikar (ZEN)</li>
+    <li><img src="https://svgs.scryfall.io/sets/roe.svg" alt="ROE"> Rise of the Eldrazi (ROE)</li>
+    <li><img src="https://svgs.scryfall.io/sets/som.svg" alt="SOM"> Scars of Mirrodin (SOM)</li>
+	<li><img src="https://svgs.scryfall.io/sets/mbs.svg" alt="MBS"> Mirrodin Besieged (MBS)</li>
+	<li><img src="https://svgs.scryfall.io/sets/nph.svg" alt="NPH"> New Phyrexia (NPH)</li>
+	<li><img src="https://svgs.scryfall.io/sets/isd.svg" alt="ISD"> Innistrad (ISD)</li>
+	<li><img src="https://svgs.scryfall.io/sets/dka.svg" alt="DKA"> Dark Ascension (DKA)</li>
+	<li><img src="https://svgs.scryfall.io/sets/avr.svg" alt="AVR"> Avacyn Restored (AVR)</li>
+	<li><img src="https://svgs.scryfall.io/sets/m11.svg" alt="M11"> Magic 2011 (M11)</li>
+	<li><img src="https://svgs.scryfall.io/sets/mrd.svg" alt="JOU"> Journey into Nyx (JOU)</li>
+  </ul>
+</body>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('ul');
+    const items = Array.from(list.querySelectorAll('li'));
+
+    items.sort((a, b) => {
+      const textA = a.textContent.toUpperCase();
+      const textB = b.textContent.toUpperCase();
+      return textA.localeCompare(textB);
+    });
+
+    items.forEach(item => list.appendChild(item));
+  });
+</script>
+
+</html>
