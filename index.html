@@ -60,19 +60,43 @@
     });
 
     function searchSet() {
-      const input = document.getElementById("setSearch").value.toLowerCase();
-      for (const box in boxSetMap) {
-        const found = boxSetMap[box].some(set =>
-          set.toLowerCase().includes(input)
-        );
-        if (found) {
-          const boxNumber = box.replace("Box ", "").padStart(2, '0');
-          window.location.href = "box_" + boxNumber + ".html";
-          return;
-        }
-      }
-      alert("Set not found in any box.");
+  const input = document.getElementById("setSearch").value.toLowerCase();
+  const matches = [];
+
+  for (const box in boxSetMap) {
+    const matchSets = boxSetMap[box].filter(set =>
+      set.toLowerCase().includes(input)
+    );
+    if (matchSets.length > 0) {
+      matches.push({ box, sets: matchSets });
     }
+  }
+
+  // If exactly one match, auto-redirect
+  if (matches.length === 1) {
+    const boxNumber = matches[0].box.replace("Box ", "").padStart(2, '0');
+    window.location.href = `box_${boxNumber}.html`;
+  }
+  // If multiple matches, show clickable results
+  else if (matches.length > 1) {
+    const container = document.getElementById("boxListContainer");
+    container.innerHTML = ""; // clear previous results
+
+    matches.forEach(match => {
+      const boxNumber = match.box.replace("Box ", "").padStart(2, '0');
+      const li = document.createElement("li");
+      li.className = "set-card";
+      const link = document.createElement("a");
+      link.href = `box_${boxNumber}.html`;
+      link.textContent = `${match.box} (${match.sets.join(", ")})`;
+      li.appendChild(link);
+      container.appendChild(li);
+    });
+  } else {
+    alert("Set not found in any box.");
+  }
+}
+
   </script>
 
 </body>
