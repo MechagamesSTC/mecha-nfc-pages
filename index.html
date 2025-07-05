@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="index-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mecha Games NFC Box Index</title>
+</head>
+<body>
+
+  <header>
+    <img src="mecha-logo.jpg" alt="Mecha Games Logo" class="logo">
+    <h1>Welcome to Mecha Games NFC Box Index</h1>
+  </header>
+
+  <div class="search-bar" style="text-align:center; margin-bottom: 2rem;">
+    <input type="text" id="setSearch" placeholder="Search set name..." style="padding: 0.6rem; width: 260px; font-size: 1rem; border-radius: 5px; border: 1px solid #fcd34d; background-color: #1e1e1e; color: #fff;">
+    <button onclick="searchSet()" style="padding: 0.6rem 1.2rem; font-size: 1rem; margin-left: 0.5rem; border-radius: 5px; border: none; background-color: #e3342f; color: #fff; cursor: pointer;">Search</button>
+  </div>
+
+  <ul id="boxListContainer"></ul>
+
+  <script>
+    const boxList = ["Box 03", "Box 04", "Box 05", "Box 06", "Box 07", "Box 08", "Box 09", "Box 10", "Box 11", "Box 12", "Box 13", "Box 14", "Box 15", "Box 16", "Box 17", "Box 18", "Box 19", "Box 20", "Box 21", "Box 22", "Box 24", "Box 25"];
+
+    const boxSetMap = {
+  "Box 04": ["Core Set 2020", "Throne of Eldraine", "Commander Masters", "War of the Spark"],
+  "Box 04": ["Kaldheim", "Zendikar Rising"],
+  "Box 05": ["Commander Legends: Battle for Baldur's Gate", "Double Masters", "Theros"],
+  "Box 06": ["Guilds of Ravnica", "Ravnica Allegience", "Ultimate Masters"],
+  "Box 07": ["Innistrad: Crimson Vow"],
+  "Box 08": ["Final Fantasy", "Innistrad: Midnight Hunt"],
+  "Box 09": ["Core Set 2021", "Ikoria: Lair of Behemoths", "Theros Beyond Death"],
+  "Box 10": ["Dominaria Remastered", "Lord of the Rings", "March of Machines Aftermath", "March of the Machines", "Multiverse Legends", "Wilds of Eldraine", "Wilds of Eldraine: Enchanting Tales"],
+  "Box 11": ["Dominaria United", "Double Masters 2022", "Unfinity"],
+  "Box 12": ["Kamigawa: Neon Dynasty", "Streets of New Capenna"],
+  "Box 13": ["Adventure's in the forgotten realms", "Modern Horizons"],
+  "Box 14": ["Doctor Who", "Lost Caverns of Ixalan", "Strixhaven", "Strixhaven: Mystical Archives"],
+  "Box 15": ["Modern Horizons 2"],
+  "Box 16": ["Modern Horizons 3"],
+  "Box 17": ["Murders at Karlov Manor", "Ravnica Remastered"],
+  "Box 18": ["Brother's War", "Phyrexia: All Will be One"],
+  "Box 19": ["Bloomburrow"],
+  "Box 20": ["Duskmourn"],
+  "Box 21": ["Aetherdrift", "Foundations", "Innistrad Remastered"],
+  "Box 22": ["Outlaws of Thunder Junction", "Tarkir: Dragonstorm"],
+  "Box 24": ["Battle of Zendikar", "Born of the Gods", "Conflux", "Core Set 2010", "Core Set 2015", "Core Set 2019", "Dominaria", "Eventide", "Legions", "Nemesis", "Oath of the Gatewach", "Planeshift", "Stronghold", "Tempest"],
+  "Box 25": ["Core Set 2012", "Core Set 2013", "Core Set 2014", "Dragon's Maze", "Fate Reforged", "Gatecrash", "Khans of Tarkir", "Magic Origins", "Return to Ravnica"],
+};
+
+    const container = document.getElementById("boxListContainer");
+    boxList.forEach(boxNum => {
+      const boxId = boxNum.replace("Box ", "");
+      const li = document.createElement("li");
+      li.className = "set-card";
+      const link = document.createElement("a");
+      link.href = "box_" + boxId + ".html";
+      link.textContent = boxNum;
+      li.appendChild(link);
+      container.appendChild(li);
+    });
+
+    function searchSet() {
+      const input = document.getElementById("setSearch").value.toLowerCase();
+      for (const box in boxSetMap) {
+        const found = boxSetMap[box].some(set =>
+          set.toLowerCase().includes(input)
+        );
+        if (found) {
+          const boxNumber = box.replace("Box ", "").padStart(2, '0');
+          window.location.href = "box_" + boxNumber + ".html";
+          return;
+        }
+      }
+      alert("Set not found in any box.");
+    }
+  </script>
+
+</body>
+</html>
