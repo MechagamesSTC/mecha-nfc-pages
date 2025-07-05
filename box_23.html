@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="box-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Box 23 - Mecha Games</title>
+</head>
+<body>
+
+  <header>
+    <img src="mecha-logo.jpg" alt="Mecha Games Logo" class="logo">
+    <h1>Box 23</h1>
+  </header>
+
+  <a href="index.html" class="back-button">
+    ⬅ Back to All Boxes
+  </a>
+
+  <ul>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/mrd.svg" alt="MRD"> Mirrodin (MRD)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/zen.svg" alt="ZEN"> Zendikar (ZEN)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/roe.svg" alt="ROE"> Rise of the Eldrazi (ROE)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/som.svg" alt="SOM"> Scars of Mirrodin (SOM)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/mbs.svg" alt="MBS"> Mirrodin Besieged (MBS)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/nph.svg" alt="NPH"> New Phyrexia (NPH)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/isd.svg" alt="ISD"> Innistrad (ISD)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/dka.svg" alt="DKA"> Dark Ascension (DKA)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/avr.svg" alt="AVR"> Avacyn Restored (AVR)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/m11.svg" alt="M11"> Magic 2011 (M11)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/jou.svg" alt="JOU"> Journey into Nyx (JOU)</li>
+  </ul>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('ul');
+    const items = Array.from(list.querySelectorAll('li'));
+    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    items.forEach(item => list.appendChild(item));
+  });
+</script>
+
+</body>
+</html>
