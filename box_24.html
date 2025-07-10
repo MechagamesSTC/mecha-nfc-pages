@@ -64,6 +64,20 @@
     <li class="set-card"><img src="https://svgs.scryfall.io/sets/c16.svg" alt="C16"> Commander 2016 (C16)</li>
     <li class="set-card"><img src="https://svgs.scryfall.io/sets/aer.svg" alt="AER"> Aether Revolt (AER)</li>
   </ul>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('.set-list');
+    const cards = Array.from(list.querySelectorAll('.set-card'));
+
+    cards.sort((a, b) => {
+      const textA = a.textContent.toUpperCase();
+      const textB = b.textContent.toUpperCase();
+      return textA.localeCompare(textB);
+    });
+
+    cards.forEach(card => list.appendChild(card));
+  });
+</script>
 
 </body>
 </html>
