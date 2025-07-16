@@ -21,18 +21,19 @@
   <ul id="boxListContainer"></ul>
 
   <script>
-    const boxList = ["Box 01", "Box 04", "Box 05", "Box 06", "Box 07", "Box 08", "Box 09", "Box 10", "Box 11", "Box 12", "Box 13", "Box 14", "Box 15", "Box 16", "Box 17", "Box 18", "Box 19", "Box 20", "Box 21", "Box 22", "Box 23", "Box 24", "Box 25"];
+    const boxList = ["Box 01", "Box 04", "Box 05", "Box 06", "Box 07", "Box 08", "Box 09", "Box 10", "Box 11", "Box 12", "Box 13", "Box 14", "Box 15", "Box 16", "Box 17", "Box 18", "Box 19", "Box 20", "Box 21", "Box 22",
+                     "Box 23", "Box 24", "Box 25", "Box 26"];
 
     const boxSetMap = {
   "Box 01": ["Amonkhet", "Commander Legends", "Commander Anthology Vol 2", "Dominaria", "Duel Decks", "Eldritch Moon", "Time Spiral Remastered", "Shadows Over Innistrad", "Explorers of Ixalan", "Ixalan", "Rivals of Ixalan",
             "Starter Commander Decks", "Secret Lair", "The List", "Mystery Booster", "Mystery Booster 2",],
-  "Box 03": ["Core Set 2020", "Commander Masters", "War of the Spark", "Throne of Eldraine", ],
+  "Box 03": ["Commander Masters", "War of the Spark", "Throne of Eldraine", ],
   "Box 04": ["Kaldheim", "Zendikar Rising"],
   "Box 05": ["Commander Legends: Battle for Baldur's Gate", "Double Masters", "Theros"],
   "Box 06": ["Guilds of Ravnica", "Ravnica Allegience", "Ultimate Masters"],
   "Box 07": ["Innistrad: Crimson Vow"],
   "Box 08": ["Final Fantasy", "Innistrad: Midnight Hunt"],
-  "Box 09": ["Core Set 2021", "Ikoria: Lair of Behemoths", "Theros Beyond Death"],
+  "Box 09": ["Ikoria: Lair of Behemoths", "Theros Beyond Death"],
   "Box 10": ["Dominaria Remastered", "Lord of the Rings", "March of Machines Aftermath", "March of the Machines", "Multiverse Legends", "Wilds of Eldraine", "Wilds of Eldraine: Enchanting Tales"],
   "Box 11": ["Dominaria United", "Double Masters 2022", "Unfinity"],
   "Box 12": ["Kamigawa: Neon Dynasty", "Streets of New Capenna"],
@@ -46,12 +47,13 @@
   "Box 20": ["Duskmourn"],
   "Box 21": ["Aetherdrift", "Foundations", "Innistrad Remastered"],
   "Box 22": ["Outlaws of Thunder Junction", "Tarkir: Dragonstorm"],
-  "Box 23": ["Mirrodin", "Zendikar", "Rise of the Eldrazi", "Scars of Mirrodin", "Mirrodin Beseiged", "New Phyrexia", "Innistrad", "Dark Ascension", "Avacyn Restored", "Magic 2011", "Journey into Nyx"],
-  "Box 24": ["Battle for Zendikar", "Born of the Gods", "Conflux", "Core Set 2010", "Core Set 2015", "Core Set 2019", "Eventide", "Legions", "Nemesis", "Oath of the Gatewatch", "Planeshift", "Stronghold", "Tempest", 
+  "Box 23": ["Mirrodin", "Zendikar", "Rise of the Eldrazi", "Scars of Mirrodin", "Mirrodin Beseiged", "New Phyrexia", "Innistrad", "Dark Ascension", "Avacyn Restored", "Journey into Nyx"],
+  "Box 24": ["Battle for Zendikar", "Born of the Gods", "Conflux", "Core Set 2010", "Eventide", "Legions", "Nemesis", "Oath of the Gatewatch", "Planeshift", "Stronghold", "Tempest", 
             "Kaladesh", "Modern Masters 2015", "Ravnica City of Guilds", "Modern Masters 2017", "Urza's Saga", "Fifth Dawn", "Conflux", "Eighth Edition", "Antiquities",
             "Ninth Edition", "Masters 25", "Commander Anthology", "Iconic Masters", "Darksteel", "Hour of Devastation", "Revised", "Unlimited", "Battlebond", "Future Sight", "Conspiracy: Take the Crown",
             "Modern Masters", "Eternal Masters", "Commander 2016", "Aether Revolt"],
-  "Box 25": ["Core Set 2012", "Core Set 2013", "Core Set 2014", "Dragon's Maze", "Fate Reforged", "Gatecrash", "Dragons of Tarkir", "Magic Origins", "Return to Ravnica"],
+  "Box 25": ["Dragon's Maze", "Fate Reforged", "Gatecrash", "Dragons of Tarkir", "Magic Origins", "Return to Ravnica"],
+  "Box 26": ["Core Set 2011", "Core Set 2012", "Core Set 2013", "Core Set 2014", "Core Set 2015", "Core Set 2019", "Core Set 2020", "Core Set 2021"],  
 };
 
     const container = document.getElementById("boxListContainer");
