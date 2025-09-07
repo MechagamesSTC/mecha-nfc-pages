@@ -91,7 +91,8 @@
   //  window.location.href = `box_${boxNumber}.html`;
   //}
   // If multiple matches, show clickable results
-  else if (matches.length > 1) {
+  // took out an else down here too - DV
+  if (matches.length > 1) {
     const container = document.getElementById("boxListContainer");
     container.innerHTML = ""; // clear previous results
 
