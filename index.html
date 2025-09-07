@@ -85,14 +85,14 @@
     }
   }
 
-  // If exactly one match, auto-redirect - always showing clickable results is more helpful so i commented this out - DV
+  // If exactly one match, auto-redirect - always showing clickable results is more helpful so i commented this out and edited the statement below - DV
   //if (matches.length === 1) {
   //  const boxNumber = matches[0].box.replace("Box ", "").padStart(2, '0');
   //  window.location.href = `box_${boxNumber}.html`;
   //}
   // If multiple matches, show clickable results
-  // took out an else down here too - DV
-  if (matches.length > 1) {
+  // edited this statement too, was originally: else if (matches.length > 1) {
+  if (matches.length > 0) {
     const container = document.getElementById("boxListContainer");
     container.innerHTML = ""; // clear previous results
 
