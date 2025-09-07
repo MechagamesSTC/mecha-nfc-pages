@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="box-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Box 27 - Mecha Games</title>
+</head>
+<body>
+
+  <header>
+    <img src="mecha-logo.jpg" alt="Mecha Games Logo" class="logo">
+    <h1>Box 27</h1>
+  </header>
+
+  <button onclick="window.location.href='index.html'" class="back-button">
+    ⬅ Back to All Boxes
+  </button>
+
+  <ul>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/atq.svg" alt="ATQ"> Antiquities (ATQ)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/chr.svg" alt="CHR"> Chronicles (CHR)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/exo.svg" alt="EXO"> Exodus (EXO)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/fem.svg" alt="FEM"> Fallen Empires (FEM)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/4ed.svg" alt="4ED"> Fourth Edition (4ED)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/hml.svg" alt="HLM"> Homelands (HML)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/ice.svg" alt="ICE"> Ice Age (ICE)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/inv.svg" alt="INV"> Invasion (INV)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/jud.svg" alt="JUD"> Judgement (JUD)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/lgn.svg" alt="LGN"> Legions (LGN)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/mmq.svg" alt="MMQ"> Mercadian Masques (MMQ)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/mir.svg" alt="MIR"> Mirage (MIR)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/nem.svg" alt="NEM"> Nemesis (NEM)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/ody.svg" alt="ODY"> Odyssey (ODY)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/ons.svg" alt="ONS"> Onslaught (ONS)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/pls.svg" alt="PLS"> Planeshift (PLS)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/PCY.svg" alt="PCY"> Prophecy (PCY)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/3ed.svg" alt="3ED"> Revised (3ED)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/scg.svg" alt="SCG"> Scourge (SCG)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/6ed.svg" alt="6ED"> Sixth Edition (6ED)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/sth.svg" alt="STH"> Stronghold (STH)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/tmp.svg" alt="TMP"> Tempest (TMP)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/drk.svg" alt="DRK"> The Dark (DRK)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/tor.svg" alt="TOR"> Torment (TOR)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/2ed.svg" alt="2ED"> Unlimited (2ED)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/uds.svg" alt="UDS"> Urza's Destiny (UDS)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/ulg.svg" alt="ULG"> Urza's Legacy (ULG)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/usg.svg" alt="USG"> Urza's Saga (USG)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/vis.svg" alt="VIS"> Visions (VIS)</li>
+    <li class="set-card"><img src="https://svgs.scryfall.io/sets/wth.svg" alt="WTH"> Weatherlight (WTH)</li>
+  </ul>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('.set-list');
+    const cards = Array.from(list.querySelectorAll('.set-card'));
+
+    cards.sort((a, b) => {
+      const textA = a.textContent.toUpperCase();
+      const textB = b.textContent.toUpperCase();
+      return textA.localeCompare(textB);
+    });
+
+    cards.forEach(card => list.appendChild(card));
+  });
+</script>
+</body>
+</html>
