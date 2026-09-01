@@ -23,6 +23,18 @@
   <script>
     const boxList = ["Box 01", "Box 02", "Box 03", "Box 04", "Box 05", "Box 06", "Box 07", "Box 08", "Box 09", "Box 10", "Box 11", "Box 12", "Box 13", "Box 14", "Box 15", "Box 16", "Box 17", "Box 18", "Box 19", "Box 20", "Box 21", "Box 22", "Box 23", "Box 24", "Box 25", "Box 26", "Box 27", "Box 28", "Box 29", "Box 30"];
 
+    const container = document.getElementById("boxListContainer");
+    boxList.forEach(boxNum => {
+      const boxId = boxNum.replace("Box ", "");
+      const li = document.createElement("li");
+      li.className = "set-card";
+      const link = document.createElement("a");
+      link.href = "box_" + boxId + ".html";
+      link.textContent = boxNum;
+      li.appendChild(link);
+      container.appendChild(li);
+    });
+    
     const boxSetMap = {
   "Box 01": ["Commander Anthology Vol 2", "Legends, "Duel Deck", "Starter Commander Decks", "Secret Lair Drop Series", "The List", "Mystery Booster", "Mystery Booster 2", "Secret Lair Showdown", "Wizards Play Network", "Starter", "Resale", "Store Championships", "Love Your LGS", "Duel Decks", "Commander", "2011", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "Ikoria", "2021", "Strixhaven", "Anthology", "Foundations: Jumpstart", "Foundations Jumpstart", "Jumpstart 2022", "Jumpstart", "Modern Masters", "Modern Masters 2015", "Modern Masters 2017", "Special Guests"],
   "Box 02": ["Kaldheim", "Double Masters 2022"],  
@@ -56,17 +68,7 @@
   "Box 30": ["Marvel Super Heroes", "Marvel Universe", "The Hobbit"]
 };
 
-    const container = document.getElementById("boxListContainer");
-    boxList.forEach(boxNum => {
-      const boxId = boxNum.replace("Box ", "");
-      const li = document.createElement("li");
-      li.className = "set-card";
-      const link = document.createElement("a");
-      link.href = "box_" + boxId + ".html";
-      link.textContent = boxNum;
-      li.appendChild(link);
-      container.appendChild(li);
-    });
+    
 
     function searchSet() {
   const input = document.getElementById("setSearch").value.toLowerCase();
